@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #010719;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.4s ease;
+}
+.navbar-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.navbar {
+    background-color: white;
+    width: 90%;
+    max-width: 2000px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logotext{
+    color: #1D51FE; 
+    font-weight: 900;
+    font-family: "Indie Flower", serif;
+    font-size: 40px;
+    margin-left: -10px;
+    margin-bottom: 0px;
+}
+.rightnav{
+    margin-right: -20px;
+}
+.ourgallery{
+    margin-left: 8px;
+}
+.aboutus{
+    margin-left: 8px;
+}
+.blogs{
+    margin-left: 8px;
+}
+.faqs{
+    margin-left: 8px;
+}
+.login{
+    margin-left: 20px;
+}
+.signup{
+    margin-left: 20px;
+}
+.imagecontainer{
+    width: 100%;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.imagecontainer .video {
+    width: 90%;
+    height: 78%;
+    object-fit: cover; 
+    
+    
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
