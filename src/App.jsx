@@ -11,6 +11,7 @@ import AdminDashboard from "./components/admin/AdminDasboard";
 import UserDashboard from "./components/user/UserDashboard";
 import Gallery from "./components/layouts/Gallery";
 import Blogs from "./components/layouts/Blogs";
+import ResetPassword from "./components/common/ResetPassword";
 
 function App() {
    
@@ -27,6 +28,7 @@ function App() {
         <Route path="/user/UserDashboard" element={<UserDashboard />}></Route>
         <Route path="/layouts/Gallery" element={<Gallery />}></Route>
         <Route path="/layouts/Blogs" element={<Blogs />}></Route>
+        <Route path="/resetpassword/:token" element={<ResetPassword />}></Route>
       </Routes>
       </>
   )

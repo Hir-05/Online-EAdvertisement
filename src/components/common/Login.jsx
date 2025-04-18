@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "../../assets/Login.css";
 import axios from "axios";
@@ -37,6 +37,7 @@ import A28 from "../../assets/media/A14.jpg";
 const Login = ({ items = [], gradientColor = "#010719" }) => {
   const gridRef = useRef(null);
   const rowRefs = useRef([]);
+  const [email, setEmail] = useState('');
   const mouseXRef = useRef(window.innerWidth / 2);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -77,6 +78,20 @@ const Login = ({ items = [], gradientColor = "#010719" }) => {
       alert("Login failed! Please check your credentials.");
     }
   }
+
+  const handleForgotPassword = async () => {
+    const email = prompt("Please enter your email to reset password:");
+    if (!email) return;
+  
+    try {
+      const res = await axios.post(`http://127.0.0.1:8000/forgotPassword?email=${email}`);
+      // console.log("Response:",res.data);
+      alert("Reset Link has been sent to Email Id")
+    } catch (error) {
+      console.error("Forgot Password Error:", error);
+      alert("Failed to send reset link. Please try again.");
+    }
+  };
 
   const totalItems = 28;
   const combinedItems = items.length > 0 ? items.slice(0, totalItems) : imageItems;
@@ -191,7 +206,7 @@ const Login = ({ items = [], gradientColor = "#010719" }) => {
                 
                 <div className="formoptions">
                   <span className="span1">
-                   <a className="passlink" href="/">Forgot password?</a>
+                   <a className="passlink" href="/"  onClick={handleForgotPassword}>Forgot password?</a>
                 </span>
                 </div>
                 <button className="btn1">SIGN IN</button>
